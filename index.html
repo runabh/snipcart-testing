@@ -31,19 +31,28 @@
     <script>
       document.addEventListener('snipcart.ready', function() {
         console.log(Snipcart);
-
-    var count = Snipcart.api.items.count();
+Snipcart.api.cart.start()
+    .then(function (cart) {
+        console.log (cart);
+  var count = Snipcart.api.cart.items.count();
         console.log("Snipcart Ready");
+    });
+    
 });
     function add(val){
       console.log("parent function called", val);
-      Snipcart.api.items.add({
+      Snipcart.api.cart.start()
+    .then(function (cart) {
+        console.log (cart);
+        Snipcart.api.cart.items.add({
     "id": val,
     "name": "Smartphone",
     "description": "",
     "url": "/",
     "price": "399.00"
 })
+    });
+      
     }
     </script>
   </body>
