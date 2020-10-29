@@ -10,12 +10,21 @@
     </div>
     <div>
       IFRAME COMES HERE
-     <iframe src="https://runabh.github.io/snipcart-iframe/index.html" height="800" width="800"></iframe>
+     <iframe src="https://runabh.github.io/snipcart-iframe/index.html" height="800" width="800" id='filecontainer'></iframe>
       <div>
         <button class="snipcart-checkout">Click here to checkout</button>
         <span class="snipcart-items-count"></span>
 <span class="snipcart-total-price"></span>
     <script async src="https://cdn.snipcart.com/themes/v3.0.23/default/snipcart.js"></script>
     <div hidden id="snipcart" data-api-key="NDgyZDYzNTAtZWE2My00ZjBiLWFlNDEtMDVhMGJjYWQxOTMwNjM3Mzk1NjkzNDg1Njg1OTg3"></div>
+        <script>
+        $('#filecontainer').load(function(){
+
+        var iframe = $('#filecontainer').contents();
+
+        iframe.find("#choose_pics").click(function(){
+               alert("test");
+        });
+});</script>
   </body>
 </html>
