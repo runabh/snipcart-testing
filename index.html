@@ -3,23 +3,6 @@
   <head>
     <title>Hello world</title>
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.23/default/snipcart.css" />
-     <script async src="https://cdn.snipcart.com/themes/v3.0.23/default/snipcart.js"></script>
-    <script>
-      document.addEventListener('snipcart.ready', function() {
-    var count = Snipcart.api.items.count();
-        console.log("Snipcart Ready");
-});
-    function add(val){
-      console.log("parent function called", val);
-      Snipcart.api.items.add({
-    "id": val,
-    "name": "Smartphone",
-    "description": "",
-    "url": "/",
-    "price": "399.00"
-})
-    }
-    </script>
   </head>
   <body>
     <div class="content">
@@ -44,5 +27,23 @@
         <button class="snipcart-customer-signin">My account</button>
    
     <div hidden id="snipcart" data-api-key="NDgyZDYzNTAtZWE2My00ZjBiLWFlNDEtMDVhMGJjYWQxOTMwNjM3Mzk1NjkzNDg1Njg1OTg3"></div>
+     <script async src="https://cdn.snipcart.com/themes/v3.0.23/default/snipcart.js"></script>
+    <script>
+      document.addEventListener('snipcart.ready', function() {
+        console.log(Snipcart);
+    var count = Snipcart.api.items.count();
+        console.log("Snipcart Ready");
+});
+    function add(val){
+      console.log("parent function called", val);
+      Snipcart.api.items.add({
+    "id": val,
+    "name": "Smartphone",
+    "description": "",
+    "url": "/",
+    "price": "399.00"
+})
+    }
+    </script>
   </body>
 </html>
