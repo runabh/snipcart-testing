@@ -31,9 +31,9 @@
     function add(val){
       console.log("parent function called", val);
         Snipcart.api.cart.items.add({
-    "id": val,
-    "name": "Smartphone",
-    "description": "Smartphone added from iframe",
+    "id": "id" + val,
+    "name": "Smartphone" + val,
+    "description": "Smartphone" + val + " added from iframe",
     "url": "/",
     "price": "399.00"
 }) 
