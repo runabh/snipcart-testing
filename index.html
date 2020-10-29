@@ -4,8 +4,19 @@
     <title>Hello world</title>
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.23/default/snipcart.css" />
     <script>
-    function add(){
-      console.log("parent function called");
+      document.addEventListener('snipcart.ready', function() {
+    var count = Snipcart.api.items.count();
+        console.log("Snipcart Ready");
+});
+    function add(val){
+      console.log("parent function called", val);
+      Snipcart.api.items.add({
+    "id": val,
+    "name": "Smartphone",
+    "description": "",
+    "url": "/",
+    "price": "399.00"
+})
     }
     </script>
   </head>
