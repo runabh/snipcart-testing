@@ -6,12 +6,15 @@
   </head>
   <body>
     <div class="content">
-      Your site content here
+      <button class="snipcart-checkout">Checkout</button>
+       <button class="snipcart-customer-signin">My account</button>
+      <div> Items in cart : <span class="snipcart-items-count"></span></div>
+        <span class="snipcart-total-price"></span>
+       
     </div>
     <div>
-      IFRAME COMES HERE
-     <iframe src="https://runabh.github.io/snipcart-iframe/index.html" height="800" width="800" id='filecontainer'></iframe>
-      <button class="snipcart-add-item"
+     <iframe src="https://runabh.github.io/snipcart-iframe/index.html" id='filecontainer'></iframe>
+<!--       <button class="snipcart-add-item"
   data-item-id="starry-night"
   data-item-price="79.99"
   data-item-url="/paintings/starry-night"
@@ -19,40 +22,21 @@
   data-item-image="https://miro.medium.com/max/820/1*3qu9l2JiQh0EduFJun1iig.jpeg"
   data-item-name="The Starry Night">
   Add to cart
-</button>
+</button> -->
       </div>
-        <button class="snipcart-checkout">Click here to checkout</button>
-        <span class="snipcart-items-count"></span>
-        <span class="snipcart-total-price"></span>
-        <button class="snipcart-customer-signin">My account</button>
-   
+        
     <div hidden id="snipcart" data-api-key="NDgyZDYzNTAtZWE2My00ZjBiLWFlNDEtMDVhMGJjYWQxOTMwNjM3Mzk1NjkzNDg1Njg1OTg3"></div>
      <script async src="https://cdn.snipcart.com/themes/v3.0.23/default/snipcart.js"></script>
     <script>
-      document.addEventListener('snipcart.ready', function() {
-        console.log(Snipcart);
-
-
-
-  var count = Snipcart.api.cart.items.count();
-        console.log("Snipcart Ready");
-
-    
-});
     function add(val){
       console.log("parent function called", val);
-
-
-
         Snipcart.api.cart.items.add({
     "id": val,
     "name": "Smartphone",
-    "description": "",
+    "description": "Smartphone added from iframe",
     "url": "/",
     "price": "399.00"
-})
-
-      
+}) 
     }
     </script>
   </body>
